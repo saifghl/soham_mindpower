@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TestimonialSection from './TestimonialSection';
 //import doctorImage from '/Images/doctor-image.png'; // Ensure you have an image at this path
 //C:\Prenaya-task\prenaya-fe-project-1\src\Images\doctor-image.png
 const AboutAndJourney = () => {
@@ -13,7 +14,7 @@ const AboutAndJourney = () => {
 
             {/* ================= ABOUT SECTION ================= */}
             <section
-                className="relative w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 px-4"
+                className="relative w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#436198] to-[#8699B9] px-4"
                 style={{
                     height: '361px',
                     minHeight: '250px',
@@ -117,7 +118,7 @@ const AboutAndJourney = () => {
             </section>
 
             {/* ================= NEW TWO-CARD SECTION ================= */}
-            <section className="w-full bg-gradient-to-b from-blue-700 to-blue-500 py-16 px-4">
+            <section className="w-full bg-gradient-to-b from-[#436198] to-[#8699B9] py-16 px-4">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
                     {/* Card 1 */}
@@ -143,6 +144,9 @@ const AboutAndJourney = () => {
 
                 </div>
             </section>
+
+            {/* ================= TESTIMONIAL SECTION ================= */}
+            <TestimonialSection />
 
             {/* ================= UPCOMING BOOK SECTION ================= */}
             <section className="w-full bg-gradient-to-r from-[#445b8f] to-[#6f87b3] py-20 px-4">
