@@ -24,7 +24,7 @@ const expertiseItems = [
         "Ancient Chinese therapy, similar to acupuncture but without needles, using gentle pressure on specific points on the body.",
     },
     {
-      title: "Mind Training",
+      title: "Reflex logic",
       description:
         "Any activity that strengthens mental skills like memory, focus, and problem-solving through structured, focused exercises.",
     },
