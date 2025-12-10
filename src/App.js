@@ -7,11 +7,12 @@ import Navbar from './components/Navbar';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Gallery from './components/Gallery';
+import Footer from './components/Footer';
 // import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App bg-white text-black">
+    <div className="App bg-white text-black font-inter ">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +21,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
