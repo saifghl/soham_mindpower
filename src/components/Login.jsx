@@ -1,35 +1,50 @@
 import React, { useState } from "react";
+import "./Login.css"; 
 
-const UserLogin = () => {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("User Login:", { email, password });
+    console.log({ email, password });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>User Login</h2>
+    <div className="login-page">
+      <div className="login-card">
+        <h2 className="login-title">Sign in</h2>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              className="form-input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              className="form-input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-      <button type="submit">Login</button>
-    </form>
+          <button type="submit" className="login-button">
+            Sign in
+          </button>
+        </form>
+      </div>
+    </div>
   );
-};
+}
 
-export default UserLogin;
+export default Login;
