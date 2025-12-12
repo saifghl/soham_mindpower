@@ -1,0 +1,166 @@
+/* src/components/Footer.css - mobile-first responsive footer */
+
+:root {
+  --brand: #0057B8;
+  --footer-bg: #0057B8;
+  --white: #ffffff;
+  --muted: #dbe6f7;
+  --container-width: 1280px;
+  --gap: 20px;
+}
+
+/* Container helper */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* footer base */
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--white);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* inner area */
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px 0 28px;
+}
+
+/* brand */
+.footer-brand .brand-name {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* columns stack on mobile */
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* each column */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* titles */
+.col-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* content in columns */
+.col-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* contact rows */
+.contact-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.contact-label {
+  font-weight: 700;
+  min-width: 64px;
+}
+
+.contact-value {
+  font-weight: 400;
+  max-width: 380px;
+}
+
+/* links */
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 18px 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+}
+
+/* small links */
+.small-links {
+  display: flex;
+  gap: 12px;
+}
+
+/* responsive breakpoints */
+/* >= 768px: make layout 3 columns and align horizontally */
+@media (min-width: 768px) {
+  .footer-inner {
+    padding: 72px 0 40px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr 280px 220px; /* contact (flexible), quick links, social */
+    align-items: start;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* >= 1024px: larger spacing and align items nicely */
+@media (min-width: 1024px) {
+  .footer-inner {
+    padding: 88px 0 48px;
+  }
+
+  .footer-brand .brand-name {
+    font-size: 64px;
+    font-family: "Jaini", cursive;
+  }
+
+  .contact-value {
+    font-size: 15px;
+  }
+
+  .col-title {
+    font-size: 18px;
+  }
+
+  .footer-bottom-inner {
+    font-size: 14px;
+  }
+}
+
+/* ensure long location text wraps nicely */
+.contact-value {
+  word-break: break-word;
+}
