@@ -16,12 +16,13 @@ const SideBar = () => {
 
     const menuItems = [
         { name: 'Dashboard', icon: LayoutDashboard, path: '/admin/dashboard' },
-        { name: 'Patients', icon: Users, path: '/admin/patient-enquiries' },
+        { name: 'Patients', icon: Users, path: '/admin/patients' },
         { name: 'Reports', icon: FileText, path: '/admin/reports' },
         { name: 'Appointments', icon: Calendar, path: '/admin/appointments' },
         { name: 'Content Mgmt', icon: FileEdit, path: '/admin/content-mgmt' },
         { name: 'Payment', icon: CreditCard, path: '/admin/payment' },
         { name: 'Settings', icon: Settings, path: '/admin/settings' },
+        { name: 'Inquiries', icon: FileText, path: '/admin/patient-enquiries' }, // Added for original PatientEnq if needed
     ];
 
     return (
@@ -38,8 +39,8 @@ const SideBar = () => {
                             key={item.name}
                             to={item.path}
                             className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive
-                                    ? 'bg-[#FEF3C7] text-gray-900'
-                                    : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+                                ? 'bg-[#FEF3C7] text-gray-900'
+                                : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
                                 }`}
                         >
                             <item.icon size={20} />

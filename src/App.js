@@ -10,6 +10,8 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import SignIn from './components/SignIn';
 import PatientEnq from './components/admin-panel/PatientEnq';
+import DoctorDashboard from './components/DoctorDashboard';
+import Patients from './components/Patient/Patients';
 
 function App() {
   const location = useLocation();
@@ -26,6 +28,8 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin/patient-enquiries" element={<PatientEnq />} />
+        <Route path="/admin/dashboard" element={<DoctorDashboard />} />
+        <Route path="/admin/patients" element={<Patients />} />
       </Routes>
       {!isAdminRoute && <Footer />}
     </div>
