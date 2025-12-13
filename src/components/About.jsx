@@ -191,7 +191,7 @@ const AboutAndJourney = () => {
                         </button>
 
                         <button className="bg-white hover:bg-gray-100 text-[#445b8f] px-6 py-3 rounded-md text-sm font-semibold transition border border-white">
-                            Contact Via What’sApp
+                            Contact Via WhatsApp
                         </button>
                     </div>
                 </div>

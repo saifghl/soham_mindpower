@@ -1,5 +1,5 @@
-// import logo from './logo.svg';
-import { Route, Routes } from 'react-router';
+
+import { Route, Routes, useLocation } from 'react-router';
 import './App.css';
 import About from './components/About';
 import Home from './components/Home';
@@ -9,12 +9,15 @@ import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import SignIn from './components/SignIn';
-// import { Routes, Route } from 'react-router-dom';
+import PatientEnq from './components/admin-panel/PatientEnq';
 
 function App() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
   return (
     <div className="App bg-white text-black font-inter ">
-      <Navbar />
+      {!isAdminRoute && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<SignIn />} />
@@ -22,8 +25,9 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin/patient-enquiries" element={<PatientEnq />} />
       </Routes>
-      <Footer />
+      {!isAdminRoute && <Footer />}
     </div>
   );
 }

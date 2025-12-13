@@ -1,35 +1,97 @@
-import { useLocation, useNavigate } from "react-router";
+import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
-    const navigate = useNavigate();
-    const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
 
-    const currentPath = location.pathname;
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Contact", href: "/contact" }
+  ];
 
-    const navItems = [{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Services', href: '/services' }, { label: 'Gallery', href: '/gallery' }, { label: 'Contact', href: '/contact' }];
-    const handleNavItemClick = (item) => {
-        navigate(item.href)
-    }
+  return (
+    <header className="navbar-container">
+      <div className="navbar-inner">
 
-    return (
+        {/* Logo */}
+        <div className="navbar-logo" onClick={() => navigate("/")}>
+          Sohaam Mindpower
+        </div>
 
-        <>
-        <nav>
-            <div className="flex justify-between items-center py-[24px] pl-[74px] pr-[167px] gap-2">
-                <div className="text-[32px] text-[#0057B8] font-jaini">sohaam mindpower</div>
-                <div className="flex gap-[24px]">
-                    {navItems.map((item) => (
-                        <div onClick={() => handleNavItemClick(item)} key={item.label} className={`text-[16px] font-inter cursor-pointer ${currentPath === item.href ? 'text-[#0057B8]' : 'text-black'}`}>{item.label}</div>
-                    ))}
-                </div>
-                <div className="flex gap-4">
-                    <div className="text-center align-middle text-[14px] text-black font-semibold border-[1px] border-[#0057B8] rounded-md px-[18px] py-[15px] cursor-pointer" onClick={() => navigate('/login')}>Login</div>
-                    <div className="text-center align-middle text-[14px] text-white bg-[#0057B8] rounded-md px-[18px] py-[14px] cursor-pointer font-semibold font-inter">Admin Login</div>
-                </div>
-            </div>
-        </nav >
-        </>
-    )
+        {/* Desktop Menu */}
+        <nav className="navbar-links">
+          {navItems.map((item) => (
+            <button
+              key={item.href}
+              className={`nav-link ${
+                location.pathname === item.href ? "active" : ""
+              }`}
+              onClick={() => navigate(item.href)}
+            >
+              {item.label}
+            </button>
+          ))}
+
+          <div className="navbar-cta">
+            <button className="btn-outline" onClick={() => navigate("/login")}>
+              Login
+            </button>
+            <button className="btn-primary" onClick={() => navigate("/AdminLogin")}>
+              Admin Login
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Icons (Login + Hamburger) */}
+        <div className="navbar-mobile-icons">
+          <button className="btn-outline-sm" onClick={() => navigate("/login")}>
+            Login
+          </button>
+          <button className="btn-primary-sm" onClick={() => navigate("/AdminLogin")}>
+            Admin
+          </button>
+
+          <button className="hamburger" onClick={() => setOpen(!open)}>
+            {open ? "✖" : "☰"}
+          </button>
+        </div>
+
+      </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="mobile-menu">
+          {navItems.map((item) => (
+            <button
+              key={item.href}
+              className="mobile-link"
+              onClick={() => {
+                navigate(item.href);
+                setOpen(false);
+              }}
+            >
+              {item.label}
+            </button>
+          ))}
+
+          <div className="mobile-cta">
+            <button className="btn-outline" onClick={() => navigate("/login")}>
+              Login
+            </button>
+            <button className="btn-primary" onClick={() => navigate("/admin-login")}>
+              Admin Login
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
 }
 
 export default Navbar;
