@@ -1,5 +1,5 @@
 
-import { Route, Routes, useLocation } from 'react-router';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import About from './components/About';
 import Home from './components/Home';
@@ -10,14 +10,18 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import SignIn from './components/SignIn';
 import PatientEnq from './components/admin-panel/PatientEnq';
+import DoctorDashboard from './components/DoctorDashboard';
+import Patients from './components/Patient/Patients';
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
+  const isDashboardRoute = location.pathname === '/dashboard' || location.pathname === '/patients';
+  const shouldHideNavbarFooter = isAdminRoute || isDashboardRoute;
 
   return (
     <div className="App bg-white text-black font-inter ">
-      {!isAdminRoute && <Navbar />}
+      {!shouldHideNavbarFooter && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<SignIn />} />
@@ -26,8 +30,10 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin/patient-enquiries" element={<PatientEnq />} />
+        <Route path="/dashboard" element={<DoctorDashboard />} />
+        <Route path="/patients" element={<Patients />} />
       </Routes>
-      {!isAdminRoute && <Footer />}
+      {!shouldHideNavbarFooter && <Footer />}
     </div>
   );
 }
