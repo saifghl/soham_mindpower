@@ -12,10 +12,13 @@ import SignIn from './components/SignIn';
 import PatientEnq from './components/admin-panel/PatientEnq';
 import DoctorDashboard from './components/DoctorDashboard';
 import Patients from './components/Patient/Patients';
+import PatientDetails from './components/Patient/PatientDetails';
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
+  const isDashboardRoute = location.pathname === '/dashboard' || location.pathname === '/patients';
+  const shouldHideNavbarFooter = isAdminRoute || isDashboardRoute;
 
   return (
     <div className="App bg-white text-black font-inter ">
@@ -30,6 +33,7 @@ function App() {
         <Route path="/admin/patient-enquiries" element={<PatientEnq />} />
         <Route path="/admin/dashboard" element={<DoctorDashboard />} />
         <Route path="/admin/patients" element={<Patients />} />
+        <Route path="/admin/patient-details" element={<PatientDetails />} />
       </Routes>
       {!isAdminRoute && <Footer />}
     </div>
