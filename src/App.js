@@ -15,6 +15,7 @@ import DoctorDashboard from './components/DoctorDashboard';
 import Patients from './components/Patient/Patients';
 import PatientDetails from './components/Patient/PatientDetails';
 import PatientProfile from './components/Patient/PatientProfile';
+import AssessmentIntro from './components/Questions/AssessmentIntro';
 import LanguagePreference from './components/Questions/LanguagePreference';
 import BeginExam from './components/Questions/BeginExam';
 import PatientDashboard from './components/Patient/PatientDashboard';
@@ -44,6 +45,7 @@ function App() {
         <Route path="/patient-profile" element={<PatientProfile />} />
         <Route path="/patient/dashboard" element={<PatientDashboard />} />
         <Route path="/questions/language-preference" element={<LanguagePreference />} />
+        <Route path="/questions/intro" element={<AssessmentIntro />} />
         <Route path="/questions/begin-exam" element={<BeginExam />} />
       </Routes>
       {!shouldHideNavbarFooter && <Footer />}

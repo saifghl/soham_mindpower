@@ -42,7 +42,7 @@ const PatientProfile = () => {
             {/* Top Navigation Bar Placeholder (assuming Navbar exists in App.js but this is specific page content) */}
 
             {/* Main Content */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-24">
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
@@ -71,15 +71,15 @@ const PatientProfile = () => {
                 </div>
 
                 {/* Navigation Tabs */}
-                <div className="bg-white rounded-xl shadow-sm mb-8">
-                    <div className="flex flex-wrap border-b border-gray-100">
+                <div className="bg-white rounded-xl shadow-sm mb-8 overflow-hidden">
+                    <div className="flex overflow-x-auto no-scrollbar border-b border-gray-100">
                         {['Personal & Medical', 'Appointments', 'Milestones'].map((tab) => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
-                                className={`px-6 py-4 text-sm font-medium transition-colors relative ${activeTab === tab
-                                        ? 'text-orange-400'
-                                        : 'text-gray-500 hover:text-gray-700'
+                                className={`whitespace-nowrap px-6 py-4 text-sm font-medium transition-colors relative flex-shrink-0 ${activeTab === tab
+                                    ? 'text-orange-400'
+                                    : 'text-gray-500 hover:text-gray-700'
                                     }`}
                             >
                                 {tab}
@@ -96,36 +96,36 @@ const PatientProfile = () => {
 
                     {/* Personal & Medical Info */}
                     <div className={`transition-opacity duration-300 ${activeTab === 'Personal & Medical' ? 'block' : 'hidden'}`}>
-                        <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+                        <div className="bg-white rounded-xl shadow-sm p-5 md:p-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 md:gap-y-8 gap-x-8">
                                 <div>
-                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Full Name</label>
-                                    <p className="text-gray-900 font-medium">{patientData.details.fullName}</p>
+                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Full Name</label>
+                                    <p className="text-gray-900 font-semibold text-base md:text-lg">{patientData.details.fullName}</p>
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Age</label>
-                                    <p className="text-gray-900 font-medium">{patientData.details.age}</p>
+                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Age</label>
+                                    <p className="text-gray-900 font-semibold text-base md:text-lg">{patientData.details.age}</p>
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Gender</label>
-                                    <p className="text-gray-900 font-medium">{patientData.details.gender}</p>
+                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Gender</label>
+                                    <p className="text-gray-900 font-semibold text-base md:text-lg">{patientData.details.gender}</p>
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Contact Number</label>
-                                    <p className="text-gray-900 font-medium">{patientData.details.contactNumber}</p>
+                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Contact Number</label>
+                                    <p className="text-gray-900 font-semibold text-base md:text-lg">{patientData.details.contactNumber}</p>
                                 </div>
-                                <div className="md:col-span-2 border-t border-gray-100 my-2"></div>
-                                <div>
-                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Mental Health Condition</label>
-                                    <p className="text-gray-900 font-medium">{patientData.details.condition}</p>
+
+                                <div className="col-span-1 md:col-span-2 lg:col-span-2">
+                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Mental Health Condition</label>
+                                    <p className="text-gray-900 font-semibold text-base md:text-lg">{patientData.details.condition}</p>
                                 </div>
-                                <div>
-                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Past Treatments</label>
-                                    <p className="text-gray-900 font-medium">{patientData.details.pastTreatments}</p>
+                                <div className="col-span-1 md:col-span-2 lg:col-span-2">
+                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Past Treatments</label>
+                                    <p className="text-gray-900 font-semibold text-base md:text-lg">{patientData.details.pastTreatments}</p>
                                 </div>
-                                <div className="md:col-span-2">
-                                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Current Medications</label>
-                                    <p className="text-gray-900 font-medium">{patientData.details.currentMedications}</p>
+                                <div className="col-span-1 md:col-span-2 lg:col-span-4 border-t border-gray-100 pt-6 mt-2">
+                                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Current Medications</label>
+                                    <p className="text-gray-900 font-semibold text-base md:text-lg">{patientData.details.currentMedications}</p>
                                 </div>
                             </div>
                         </div>
