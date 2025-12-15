@@ -14,6 +14,7 @@ import DoctorDashboard from './components/DoctorDashboard';
 import Patients from './components/Patient/Patients';
 import PatientDetails from './components/Patient/PatientDetails';
 import LanguagePreference from './components/Questions/LanguagePreference';
+import BeginExam from './components/Questions/BeginExam';
 
 function App() {
   const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
         <Route path="/admin/patients" element={<Patients />} />
         <Route path="/admin/patient-details" element={<PatientDetails />} />
         <Route path="/questions/language-preference" element={<LanguagePreference />} />
+        <Route path="/questions/begin-exam" element={<BeginExam />} />
       </Routes>
       {!shouldHideNavbarFooter && <Footer />}
     </div>
