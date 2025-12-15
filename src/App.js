@@ -13,6 +13,7 @@ import PatientEnq from './components/admin-panel/PatientEnq';
 import DoctorDashboard from './components/DoctorDashboard';
 import Patients from './components/Patient/Patients';
 import PatientDetails from './components/Patient/PatientDetails';
+import PatientProfile from './components/Patient/PatientProfile';
 import LanguagePreference from './components/Questions/LanguagePreference';
 import BeginExam from './components/Questions/BeginExam';
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/admin/dashboard" element={<DoctorDashboard />} />
         <Route path="/admin/patients" element={<Patients />} />
         <Route path="/admin/patient-details" element={<PatientDetails />} />
+        <Route path="/patient-profile" element={<PatientProfile />} />
         <Route path="/questions/language-preference" element={<LanguagePreference />} />
         <Route path="/questions/begin-exam" element={<BeginExam />} />
       </Routes>
