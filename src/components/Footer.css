@@ -239,35 +239,156 @@
 @media (max-width: 1024px) {
   .footer-inner {
     grid-template-columns: 1fr 1fr;
-    /* Logo/Contact takes full row? Or 2 cols */
     gap: 48px;
-  }
-
-  .footer-left {
-    grid-column: 1 / -1;
-    /* Full width top */
   }
 }
 
-@media (max-width: 640px) {
-  .footer-inner {
+/* ================= Mobile Footer Styling ================= */
+.mobile-footer {
+  display: none;
+  /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .desktop-footer {
+    display: none;
+  }
+
+  .mobile-footer {
+    display: block;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 60px 24px 40px;
+    border-top: 1px solid var(--footer-border);
+  }
+
+  .mobile-footer-inner {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-bottom: 40px;
   }
 
-  .brand-name {
-    font-size: 20px;
+  /* Header: Logo + Socials */
+  .mf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .contact-label {
+  .brand-name-mobile {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--footer-heading);
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+
+  .mf-socials {
+    display: flex;
+    gap: 12px;
+  }
+
+  .mf-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Subtle bg */
+    border-radius: 8px;
+    /* Slightly rounded squares like visual reference */
+    color: var(--footer-accent);
+    transition: all 0.3s;
+  }
+
+  .mf-social-icon:hover {
+    background: var(--footer-accent);
+    color: white;
+  }
+
+  /* Grid: Services + Links */
+  .mf-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .mf-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mf-col-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FBBF24;
+
+    color: var(--footer-accent);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .mf-link {
+    font-size: 14px;
+    color: var(--footer-text);
+    text-decoration: none;
+  }
+
+  /* Contact Rows in Mobile */
+  .mf-contact-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .mf-contact-icon {
     font-size: 16px;
+    line-height: 1.4;
   }
 
-  .footer-bottom-inner {
+  /* Buttons */
+  .mf-actions {
+    display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-top: 10px;
+  }
+
+  .mf-btn-outline,
+  .mf-btn-solid {
+    display: block;
     text-align: center;
+    padding: 14px 20px;
+    border-radius: 50px;
+    /* Pillow shape */
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .mf-btn-outline {
+    border: 1px solid var(--footer-heading);
+    color: var(--footer-heading);
+    background: transparent;
+  }
+
+  .mf-btn-solid {
+    background: var(--footer-heading);
+    color: var(--footer-bg);
+    border: 1px solid var(--footer-heading);
+  }
+
+  /* Bottom */
+  .mf-bottom-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 }
