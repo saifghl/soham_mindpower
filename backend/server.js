@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
+require('dotenv').config();
 const path = require('path');
 
 // Import routes
@@ -12,7 +12,6 @@ const patientRoutes = require('./routes/patientRoutes');
 // Import database
 const pool = require('./config/db');
 
-dotenv.config();
 const app = express();
 
 // Middleware
