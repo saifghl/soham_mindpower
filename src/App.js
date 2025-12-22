@@ -31,6 +31,7 @@ import Settings from './components/admin-panel/Settings';
 import PatientDetailAdmin from './components/admin-panel/PatientDetailAdmin';
 import Appointment from './components/admin-panel/Appointment';
 import VideoForm from './components/admin-panel/VideoForm';
+import AddPatient from './components/admin-panel/AddPatient';
 
 
 function App() {
@@ -78,10 +79,11 @@ function App() {
           <Route path="/questions/language-preference" element={<LanguagePreference />} />
           <Route path="/questions/intro" element={<AssessmentIntro />} />
           <Route path="/questions/begin-exam" element={<BeginExam />} />
-          <Route path="/admin/appointment" element={<Appointment/>} />
+          <Route path="/admin/appointment" element={<Appointment />} />
           <Route path="/admin/videoform" element={<VideoForm />} />
+          <Route path="/admin/add-patient" element={<AddPatient />} />
         </Routes>
-      </div> 
+      </div>
       {!shouldHideNavbarFooter && <Footer />}
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search, PlusCircle, Edit, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
 import SideBar from '../admin-panel/SideBar';
+import { Link } from 'react-router-dom';
 
 const Patients = () => {
     // Mock Data
@@ -30,10 +31,10 @@ const Patients = () => {
                         />
                     </div>
 
-                    <button className="w-full md:w-auto flex items-center justify-center space-x-2 bg-amber-300 hover:bg-amber-400 text-gray-900 px-6 py-2.5 rounded-lg font-medium transition-colors shadow-sm">
+                    <Link to="/admin/add-patient" className="w-full md:w-auto flex items-center justify-center space-x-2 bg-amber-300 hover:bg-amber-400 text-gray-900 px-6 py-2.5 rounded-lg font-medium transition-colors shadow-sm">
                         <PlusCircle size={18} />
                         <span>Add new patients</span>
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Page Title */}
