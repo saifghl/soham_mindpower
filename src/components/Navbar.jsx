@@ -41,9 +41,7 @@ function Navbar() {
             <button className="btn-outline" onClick={() => navigate("/login")}>
               Login
             </button>
-            <button className="btn-primary" onClick={() => navigate("/admin-login")}>
-              Admin Login
-            </button>
+
           </div>
         </nav>
 
@@ -52,9 +50,7 @@ function Navbar() {
           <button className="btn-outline-sm" onClick={() => navigate("/login")}>
             Login
           </button>
-          <button className="btn-primary-sm" onClick={() => navigate("/admin-login")}>
-            Admin
-          </button>
+
 
           <button className="hamburger" onClick={() => setOpen(!open)}>
             {open ? "✖" : "☰"}
@@ -83,9 +79,7 @@ function Navbar() {
             <button className="btn-outline" onClick={() => navigate("/login")}>
               Login
             </button>
-            <button className="btn-primary" onClick={() => navigate("/admin-login")}>
-              Admin Login
-            </button>
+
           </div>
         </div>
       )}

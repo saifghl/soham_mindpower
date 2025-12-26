@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Login from './components/Login';
-import AdminLogin from './components/AdminLogin';
+
 import SignIn from './components/SignIn';
 import PatientEnq from './components/admin-panel/PatientEnq';
 import AddQA from './components/admin-panel/AddQA';
@@ -40,7 +40,7 @@ function App() {
   const isAdminRoute = location.pathname.startsWith('/admin');
   const isDashboardRoute = location.pathname === '/dashboard' || location.pathname === '/patients';
   const isQuestionRoute = location.pathname.startsWith('/questions');
-  const isAuthRoute = location.pathname === '/login' || location.pathname === '/admin-login' || location.pathname === '/signin';
+  const isAuthRoute = location.pathname === '/login' || location.pathname === '/signin';
   const isPatientRoute = location.pathname.startsWith('/patient') || location.pathname === '/patient-profile';
   // Added patient profile explicitly since it's outside /patient prefix often
   const shouldHideNavbarFooter = isAdminRoute || isDashboardRoute || isQuestionRoute || isAuthRoute || isPatientRoute;
@@ -57,7 +57,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
+
           <Route path="/signin" element={<SignIn />} /> {/* Kept if needed, otherwise can remove */}
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
